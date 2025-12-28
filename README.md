@@ -13,7 +13,7 @@ Microservicio con stack tecnológico python para proceso de datos de telemetría
 **1. Clonar o descargar el proyecto**
 
 ```bash
-git clone <url-repo>
+git clone https://github.com/IJozk/InformesDeResguardo
 cd InformesDeResguardo
 ```
 
