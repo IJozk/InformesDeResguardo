@@ -25,5 +25,8 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 COPY ./app /app
+COPY ./app/data /app/data
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD python manage.py makemigrations --noinput && \
+    python manage.py migrate --noinput && \
+    python manage.py runserver 0.0.0.0:8000

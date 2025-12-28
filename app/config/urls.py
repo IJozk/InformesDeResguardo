@@ -17,15 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ninja import NinjaAPI
+from reports.api import router as reports_router
 
 api = NinjaAPI()
 
-
-""" Endpoint de prueba sumatoria. (ejemplo de prueba de NinjaAPI) """
-@api.get("/add")
-def add(request, a: int, b: int):
-    return {"result": a + b}
-
+# Registrar el router de reports
+api.add_router("/", reports_router)  # <-- Agregar esta línea
 
 urlpatterns = [
     path("admin/", admin.site.urls),
